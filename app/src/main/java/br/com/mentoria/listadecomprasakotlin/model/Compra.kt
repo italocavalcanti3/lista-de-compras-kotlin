@@ -12,6 +12,11 @@ class Compra {
     var preco: Double = 0.00
     var total: Double = 0.00
 
+    companion object {
+        @get:Exclude
+        var valorTotalLista: Double = 0.00
+    }
+
     constructor()
 
     constructor(quantidade: Int, descricao: String, preco: Double) {
@@ -19,13 +24,14 @@ class Compra {
         this.descricao = descricao
         this.preco = preco
         this.total = quantidade * preco
-
+        valorTotalLista += total
     }
 
     fun salva(email: String?) {
         val idUsuario = Base64Custom.codificar(email.toString())
         val database = FirebaseDatabase.getInstance().reference
         database.child("lista").child(idUsuario).push().setValue(this)
+        database.child("saldo").child(idUsuario).setValue(valorTotalLista)
     }
 
 }

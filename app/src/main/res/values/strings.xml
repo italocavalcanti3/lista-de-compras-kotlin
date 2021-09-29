@@ -23,4 +23,7 @@
     <string name="valor">Valor</string>
     <string name="ex_3_99">Ex: 3,99</string>
     <string name="salvar">Salvar</string>
+    <string name="limpar_lista">Limpar Lista</string>
+    <string name="valor_total_da_compra">Valor total da compra</string>
+    <string name="r_0_00">R$ 0,00</string>
 </resources>

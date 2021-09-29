@@ -11,6 +11,8 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -29,67 +31,113 @@ import kotlin.collections.ArrayList
 
 class ListaComprasActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityListaComprasBinding
-    lateinit var valueEventListener: ValueEventListener
+    lateinit var listaVEL: ValueEventListener
+    lateinit var saldoVEL: ValueEventListener
     lateinit var adapter: ListaComprasAdapter
     var autenticacao: FirebaseAuth = Firebase.auth
     var database: DatabaseReference = FirebaseDatabase.getInstance().reference
     var listaCompras: ArrayList<Compra> = ArrayList()
-    var valorTotal: Double = 0.00
+    var saldoTotal = 0.00
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityListaComprasBinding.inflate(layoutInflater)
+        val binding = ActivityListaComprasBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.toolbarLista)
         configuraRecyclerView(binding)
-
     }
 
     override fun onStart() {
         super.onStart()
+        carregarSaldoTotal()
         carregarListaCompras()
     }
 
-    private fun configuraRecyclerView(binding: ActivityListaComprasBinding) {
-
-        val recyclerLista = binding.contentMain.recyclerLista
-        recyclerLista.layoutManager = LinearLayoutManager(this)
-        recyclerLista.setHasFixedSize(true)
-        recyclerLista.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager.VERTICAL))
-        adapter = ListaComprasAdapter(listaCompras)
-        recyclerLista.adapter = adapter
-
+    override fun onStop() {
+        super.onStop()
+        database.removeEventListener(listaVEL)
+        database.removeEventListener(saldoVEL)
     }
 
-    private fun carregarListaCompras() {
+    @SuppressLint("NotifyDataSetChanged")
+    private fun carregarSaldoTotal() {
         val idUsuario = Base64Custom.codificar(autenticacao.currentUser?.email.toString())
-        val databaseRef = database.child("lista").child(idUsuario)
-        valueEventListener = object : ValueEventListener {
-            @SuppressLint("NotifyDataSetChanged")
+        val databaseRef = database.child("saldo").child(idUsuario)
+        saldoVEL = object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                listaCompras.clear()
-                for (dados in snapshot.children) {
-                    val compra = dados.getValue(Compra::class.java)!!
-                    listaCompras.add(compra)
-                    valorTotal = compra.total
-                }
-                binding.contentMain.textoTotalCompra.text =
-                    String.format(Locale("pt", "BR"),"R$ %.2f", valorTotal)
-                adapter.notifyDataSetChanged()
+                saldoTotal = snapshot.value.toString().toDouble()
             }
 
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
             }
         }
+        val saldoFormatado = String.format(Locale("pt", "BR"), "R$ %.2f", saldoTotal)
+        findViewById<TextView>(R.id.textoTotalCompra).text = saldoFormatado
+        databaseRef.addValueEventListener(saldoVEL)
+    }
 
-        databaseRef.addValueEventListener(valueEventListener)
+    @SuppressLint("NotifyDataSetChanged")
+    fun limparLista(view: View) {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Confirmar exclusão")
+        builder.setMessage("Tem certeza que deseja limpar a lista?")
+        builder.setNegativeButton("Não") { d, i -> }
+        builder.setPositiveButton("Sim") { dialog, wich ->
+            val idUsuario = Base64Custom.codificar(autenticacao.currentUser?.email.toString())
+            val databaseRef = database.child("lista").child(idUsuario)
+            databaseRef.removeValue()
+            val saldoDatabaseRef = database.child("saldo").child(idUsuario)
+            saldoDatabaseRef.setValue(0.00)
+            listaCompras.clear()
+            saldoTotal = 0.00
+            adapter.notifyDataSetChanged()
+            carregarSaldoTotal()
+        }
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+    }
+
+    private fun configuraRecyclerView(binding: ActivityListaComprasBinding) {
+        val recyclerLista = binding.contentMain.recyclerLista
+        recyclerLista.layoutManager = LinearLayoutManager(this)
+        recyclerLista.setHasFixedSize(true)
+        recyclerLista.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager.VERTICAL))
+        adapter = ListaComprasAdapter(listaCompras)
+        recyclerLista.adapter = adapter
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    private fun carregarListaCompras() {
+        val idUsuario = Base64Custom.codificar(autenticacao.currentUser?.email.toString())
+        val databaseRef = database.child("lista").child(idUsuario)
+        listaVEL = object : ValueEventListener {
+            @SuppressLint("NotifyDataSetChanged")
+            override fun onDataChange(snapshot: DataSnapshot) {
+                listaCompras.clear()
+                for (dados in snapshot.children) {
+                    val compra = dados.getValue(Compra::class.java)!!
+                    listaCompras.add(compra)
+                }
+                adapter.notifyDataSetChanged()
+                carregarSaldoTotal()
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        }
+        databaseRef.addValueEventListener(listaVEL)
     }
 
     fun abrirTelaAdicionarItem(view: View) {
         val intent = Intent(this, AdicionarItemActivity::class.java)
         startActivity(intent)
+    }
+
+    private fun deslogar() {
+        autenticacao.signOut()
+        finish()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -113,16 +161,6 @@ class ListaComprasActivity : AppCompatActivity() {
             R.id.botaoDeslogar -> deslogar()
         }
         return super.onOptionsItemSelected(item)
-    }
-
-    private fun deslogar() {
-        autenticacao.signOut()
-        finish()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        database.removeEventListener(valueEventListener)
     }
 
 }
