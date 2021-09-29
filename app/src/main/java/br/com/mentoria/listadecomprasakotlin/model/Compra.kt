@@ -15,6 +15,11 @@ class Compra {
     companion object {
         @get:Exclude
         var valorTotalLista: Double = 0.00
+
+    }
+
+    fun getValorTotalLista(): Double {
+        return valorTotalLista
     }
 
     constructor()

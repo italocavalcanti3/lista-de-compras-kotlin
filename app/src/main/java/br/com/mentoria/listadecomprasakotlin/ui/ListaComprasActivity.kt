@@ -66,14 +66,15 @@ class ListaComprasActivity : AppCompatActivity() {
         saldoVEL = object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 saldoTotal = snapshot.value.toString().toDouble()
+                val saldoFormatado = String.format(Locale("pt", "BR"), "R$ %.2f", saldoTotal)
+                findViewById<TextView>(R.id.textoTotalCompra).text = saldoFormatado
             }
 
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
             }
         }
-        val saldoFormatado = String.format(Locale("pt", "BR"), "R$ %.2f", saldoTotal)
-        findViewById<TextView>(R.id.textoTotalCompra).text = saldoFormatado
+        adapter.notifyDataSetChanged()
         databaseRef.addValueEventListener(saldoVEL)
     }
 
@@ -120,7 +121,6 @@ class ListaComprasActivity : AppCompatActivity() {
                     listaCompras.add(compra)
                 }
                 adapter.notifyDataSetChanged()
-                carregarSaldoTotal()
             }
 
             override fun onCancelled(error: DatabaseError) {
