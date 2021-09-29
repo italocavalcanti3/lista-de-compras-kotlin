@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.LoginActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintBottom_toTopOf="@+id/inputLoginEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.31"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:srcCompat="@drawable/logoapp" />
+
+    <TextView
+        android:id="@+id/textLoginEsqueciMinhaSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/esqueci_minha_senha"
+        android:textColor="@color/primary"
+        app:layout_constraintBottom_toTopOf="@+id/textLoginCriarConta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonEntrar" />
+
+    <TextView
+        android:id="@+id/textLoginCriarConta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:minHeight="48dp"
+        android:onClick="abrirTelaCadastro"
+        android:text="@string/criar_uma_conta"
+        android:textColor="@color/primaryDark"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textLoginEsqueciMinhaSenha" />
+
+    <EditText
+        android:id="@+id/inputLoginEmail"
+        android:layout_width="363dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/primaryDark"
+        android:drawableStart="@drawable/ic_email"
+        android:drawablePadding="6dp"
+        android:drawableTint="@color/primaryDark"
+        android:ems="10"
+        android:fontFamily="@font/poppins"
+        android:hint="@string/text_digite_seu_e_mail"
+        android:inputType="textPostalAddress"
+        android:textColor="#232323"
+        android:textColorHint="#656565"
+        app:layout_constraintBottom_toTopOf="@+id/inputLoginSenha"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <EditText
+        android:id="@+id/inputLoginSenha"
+        android:layout_width="363dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/primaryDark"
+        android:drawableStart="@drawable/ic_senha"
+        android:drawablePadding="6dp"
+        android:drawableTint="@color/primaryDark"
+        android:ems="10"
+        android:fontFamily="@font/poppins"
+        android:hint="@string/text_digite_sua_senha"
+        android:inputType="textPassword"
+        android:textColor="#232323"
+        android:textColorHint="#656565"
+        app:layout_constraintBottom_toTopOf="@+id/buttonEntrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputLoginEmail" />
+
+    <Button
+        android:id="@+id/buttonEntrar"
+        android:layout_width="363dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_rounded"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/texto_botao_entrar"
+        android:textColor="@color/white"
+        app:cornerRadius="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/textLoginEsqueciMinhaSenha"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputLoginSenha" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

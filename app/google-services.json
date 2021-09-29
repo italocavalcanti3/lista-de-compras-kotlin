@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "463159509815",
+    "project_id": "lista-de-compras-817d7",
+    "storage_bucket": "lista-de-compras-817d7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:463159509815:android:9a42f84068a822f69e50b2",
+        "android_client_info": {
+          "package_name": "br.com.mentoria.listadecomprasakotlin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "463159509815-bpq0ep8mbjkjg7hom54mfi07knttikn0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.mentoria.listadecomprasakotlin",
+            "certificate_hash": "d956ffdd4e506e4df08b9d0b31acb1dd9e6d08fb"
+          }
+        },
+        {
+          "client_id": "463159509815-7mog51i00a8j12n2mml90uec77o9j7uo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDS-mAQxCnq37Uk530jPoOPf9Lpdf_Ths"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "463159509815-7mog51i00a8j12n2mml90uec77o9j7uo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

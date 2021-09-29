@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">463159509815-7mog51i00a8j12n2mml90uec77o9j7uo.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">463159509815</string>
+    <string name="google_api_key" translatable="false">AIzaSyBDS-mAQxCnq37Uk530jPoOPf9Lpdf_Ths</string>
+    <string name="google_app_id" translatable="false">1:463159509815:android:9a42f84068a822f69e50b2</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBDS-mAQxCnq37Uk530jPoOPf9Lpdf_Ths</string>
+    <string name="google_storage_bucket" translatable="false">lista-de-compras-817d7.appspot.com</string>
+    <string name="project_id" translatable="false">lista-de-compras-817d7</string>
+</resources>

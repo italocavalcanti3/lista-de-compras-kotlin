@@ -1,0 +1,16 @@
+br/com/mentoria/listadecomprasakotlin/databinding/Slide3FragmentBinding.java
+ br.com.mentoria.listadecomprasakotlin.databinding.Slide3FragmentBinding
+br/com/mentoria/listadecomprasakotlin/databinding/Slide1FragmentBinding.java
+ br.com.mentoria.listadecomprasakotlin.databinding.Slide1FragmentBinding
+br/com/mentoria/listadecomprasakotlin/databinding/ActivityMainIntroBinding.java
+ br.com.mentoria.listadecomprasakotlin.databinding.ActivityMainIntroBinding
+br/com/mentoria/listadecomprasakotlin/databinding/ActivityCadastroBinding.java
+ br.com.mentoria.listadecomprasakotlin.databinding.ActivityCadastroBinding
+br/com/mentoria/listadecomprasakotlin/databinding/Slide4FragmentBinding.java
+ br.com.mentoria.listadecomprasakotlin.databinding.Slide4FragmentBinding
+br/com/mentoria/listadecomprasakotlin/databinding/Slide2FragmentBinding.java
+ br.com.mentoria.listadecomprasakotlin.databinding.Slide2FragmentBinding
+br/com/mentoria/listadecomprasakotlin/BuildConfig.java
+ br.com.mentoria.listadecomprasakotlin.BuildConfig
+br/com/mentoria/listadecomprasakotlin/databinding/ActivityLoginBinding.java
+ br.com.mentoria.listadecomprasakotlin.databinding.ActivityLoginBinding

@@ -1,0 +1,134 @@
+[
+    {
+        "merged": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\build\\intermediates\\merged_res\\debug\\font_poppins_semibold.ttf.flat",
+        "source": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\src\\main\\res\\font\\poppins_semibold.ttf"
+    },
+    {
+        "merged": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\build\\intermediates\\merged_res\\debug\\drawable_segundoslide.png.flat",
+        "source": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\src\\main\\res\\drawable\\segundoslide.png"
+    },
+    {
+        "merged": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\build\\intermediates\\merged_res\\debug\\drawable_logoapp.png.flat",
+        "source": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\src\\main\\res\\drawable\\logoapp.png"
+    },
+    {
+        "merged": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\build\\intermediates\\merged_res\\debug\\font_poppins.ttf.flat",
+        "source": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\src\\main\\res\\font\\poppins.ttf"
+    },
+    {
+        "merged": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\build\\intermediates\\merged_res\\debug\\drawable_terceiroslide.png.flat",
+        "source": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\src\\main\\res\\drawable\\terceiroslide.png"
+    },
+    {
+        "merged": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_senha.xml.flat",
+        "source": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\src\\main\\res\\drawable\\ic_senha.xml"
+    },
+    {
+        "merged": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\build\\intermediates\\merged_res\\debug\\drawable_quartoslide.png.flat",
+        "source": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\src\\main\\res\\drawable\\quartoslide.png"
+    },
+    {
+        "merged": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_email.xml.flat",
+        "source": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\src\\main\\res\\drawable\\ic_email.xml"
+    },
+    {
+        "merged": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_login.xml.flat",
+        "source": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\build\\intermediates\\merged_res\\debug\\font_poppins_bold.xml.flat",
+        "source": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\src\\main\\res\\font\\poppins_bold.xml"
+    },
+    {
+        "merged": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\build\\intermediates\\merged_res\\debug\\drawable_quintoslide.png.flat",
+        "source": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\src\\main\\res\\drawable\\quintoslide.png"
+    },
+    {
+        "merged": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\build\\intermediates\\merged_res\\debug\\layout_slide_4_fragment.xml.flat",
+        "source": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\src\\main\\res\\layout\\slide_4_fragment.xml"
+    },
+    {
+        "merged": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_main_intro.xml.flat",
+        "source": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\src\\main\\res\\layout\\activity_main_intro.xml"
+    },
+    {
+        "merged": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\build\\intermediates\\merged_res\\debug\\layout_slide_1_fragment.xml.flat",
+        "source": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\src\\main\\res\\layout\\slide_1_fragment.xml"
+    },
+    {
+        "merged": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\build\\intermediates\\merged_res\\debug\\drawable_primeiroslide.png.flat",
+        "source": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\src\\main\\res\\drawable\\primeiroslide.png"
+    },
+    {
+        "merged": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\build\\intermediates\\merged_res\\debug\\drawable_button_rounded.xml.flat",
+        "source": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\src\\main\\res\\drawable\\button_rounded.xml"
+    },
+    {
+        "merged": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_cadastro.xml.flat",
+        "source": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\src\\main\\res\\layout\\activity_cadastro.xml"
+    },
+    {
+        "merged": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\build\\intermediates\\merged_res\\debug\\layout_slide_3_fragment.xml.flat",
+        "source": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\src\\main\\res\\layout\\slide_3_fragment.xml"
+    },
+    {
+        "merged": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\build\\intermediates\\merged_res\\debug\\layout_slide_2_fragment.xml.flat",
+        "source": "F:\\Programas\\Android\\Jobs\\Repositorios\\lista-de-compras-kotlin\\app\\src\\main\\res\\layout\\slide_2_fragment.xml"
+    }
+]

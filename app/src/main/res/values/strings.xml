@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Lista de Compras Kotlin</string>
+    <string name="texto_primeiro_slide_fragment">Adicione itens à sua lista</string>
+    <string name="texto_segundo_slide_fragment">Acompanhe o total da sua compra</string>
+    <string name="texto_terceiro_slide_fragment">Altere ou exclua itens quando quiser</string>
+    <string name="button_criar_uma_conta">Ainda não possui conta? Clique para criar!</string>
+    <string name="text_digite_sua_senha">Digite sua senha</string>
+    <string name="text_digite_seu_e_mail">Digite seu e-mail</string>
+    <string name="texto_botao_entrar">Entrar</string>
+    <string name="esqueci_minha_senha">Esqueci minha senha</string>
+    <string name="ja_tenho_conta">Já tenho conta</string>
+    <string name="crie_sua_conta_gr_tis">Crie sua conta grátis</string>
+    <string name="junte_se_a_mais_de_meio_milh_o_nde_pessoas_e_comece_ja">Junte-se a mais de meio milhão\nde pessoas e comece já!</string>
+    <string name="criar_uma_conta">Criar uma conta</string>
+    <string name="ja_tem_conta_fazer_login">Já tem conta? Fazer login</string>
+    <string name="fazer_cadastro">Fazer cadastro</string>
+    <string name="digite_seu_nome">Digite seu nome</string>
+    <string name="logout">Logout</string>
+    <string name="adicionar">Adicionar</string>
+    <string name="ex_leite_integral_1l">Ex: Leite integral 1L</string>
+    <string name="digite_o_nome_do_produto">Digite o nome do produto</string>
+    <string name="quantidade">Quantidade</string>
+    <string name="valor">Valor</string>
+    <string name="ex_3_99">Ex: 3,99</string>
+    <string name="salvar">Salvar</string>
+</resources>
