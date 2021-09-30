@@ -4,9 +4,11 @@ import br.com.mentoria.listadecomprasakotlin.helper.Base64Custom
 import com.google.firebase.database.Exclude
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.IgnoreExtraProperties
+import java.io.Serializable
 
-class Compra {
+class Compra: Serializable {
 
+    var idCompra: Int = 0
     var quantidade: Int = 0
     var descricao: String = ""
     var preco: Double = 0.00
@@ -15,11 +17,14 @@ class Compra {
     companion object {
         @get:Exclude
         var valorTotalLista: Double = 0.00
-
+        @get:Exclude
+        var idGeral: Int = 0
     }
-
-    fun getValorTotalLista(): Double {
-        return valorTotalLista
+    fun ajustaValorTotalLista(valor: Double) {
+        valorTotalLista = valor
+    }
+    fun ajustaIdGeral(id: Int) {
+        idGeral = 0
     }
 
     constructor()
@@ -30,12 +35,14 @@ class Compra {
         this.preco = preco
         this.total = quantidade * preco
         valorTotalLista += total
+        this.idCompra = idGeral
+        idGeral++
     }
 
     fun salva(email: String?) {
         val idUsuario = Base64Custom.codificar(email.toString())
         val database = FirebaseDatabase.getInstance().reference
-        database.child("lista").child(idUsuario).push().setValue(this)
+        database.child("lista").child(idUsuario).child(this.idCompra.toString()).setValue(this)
         database.child("saldo").child(idUsuario).setValue(valorTotalLista)
     }
 

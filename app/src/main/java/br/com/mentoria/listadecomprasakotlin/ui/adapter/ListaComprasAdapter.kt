@@ -10,33 +10,30 @@ import br.com.mentoria.listadecomprasakotlin.model.Compra
 import java.util.*
 import kotlin.collections.ArrayList
 
-class ListaComprasAdapter(private var listaCompras: ArrayList<Compra>) : RecyclerView.Adapter<ListaComprasAdapter.MyViewHolder>() {
-
-    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
-        val textQuantidade: TextView = itemView.findViewById(R.id.textQuantidade)
-        val textDescricao: TextView = itemView.findViewById(R.id.textNome)
-        val textPreco: TextView = itemView.findViewById(R.id.textValor)
-
-    }
+class ListaComprasAdapter(val listaCompras: ArrayList<Compra>) : RecyclerView.Adapter<ListaComprasAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_lista_compras_adapter, parent, false)
         return MyViewHolder(view)
     }
 
+    override fun getItemCount(): Int = listaCompras.size
+
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val compra = listaCompras[position]
-        holder.textQuantidade.text = compra.quantidade.toString()
-        holder.textDescricao.text = compra.descricao
-
-        val totalPreco = String.format(Locale("pt", "BR"), "R$ %.2f", compra.preco)
-        holder.textPreco.text = totalPreco
-
+        holder.bind(listaCompras[position])
     }
 
-    override fun getItemCount(): Int {
-        return listaCompras.size
+    inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        fun bind(compra: Compra) {
+            with(compra) {
+                itemView.findViewById<TextView>(R.id.textQuantidade).text = quantidade.toString()
+                itemView.findViewById<TextView>(R.id.textNome).text = descricao
+
+                val precoFormatado = String.format(Locale("pt", "BR"), "R$ %.2f", preco)
+                itemView.findViewById<TextView>(R.id.textValor).text = precoFormatado
+            }
+        }
+
     }
 
 

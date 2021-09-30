@@ -10,13 +10,18 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.AdapterView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.ItemTouchHelper
+import androidx.recyclerview.widget.ItemTouchHelper.*
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import br.com.mentoria.listadecomprasakotlin.R
+import br.com.mentoria.listadecomprasakotlin.config.RecyclerItemClickListener
 import br.com.mentoria.listadecomprasakotlin.databinding.ActivityListaComprasBinding
 import br.com.mentoria.listadecomprasakotlin.helper.Base64Custom
 import br.com.mentoria.listadecomprasakotlin.model.Compra
@@ -45,6 +50,73 @@ class ListaComprasActivity : AppCompatActivity() {
         setContentView(binding.root)
         setSupportActionBar(binding.toolbarLista)
         configuraRecyclerView(binding)
+
+        //Configura Swipe
+        val itemTouchHelper = ItemTouchHelper(ItemTouchHelper())
+        itemTouchHelper.attachToRecyclerView(binding.contentMain.recyclerLista)
+
+
+    }
+
+    inner class ItemTouchHelper : Callback() {
+        override fun getMovementFlags(
+            recyclerView: RecyclerView,
+            viewHolder: RecyclerView.ViewHolder
+        ): Int {
+            val dragFlags: Int = ACTION_STATE_IDLE
+            val swipeFlags: Int = END or START
+            return makeMovementFlags(dragFlags, swipeFlags)
+        }
+
+        override fun onMove(
+            recyclerView: RecyclerView,
+            viewHolder: RecyclerView.ViewHolder,
+            target: RecyclerView.ViewHolder
+        ): Boolean {
+            return false
+        }
+
+        override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+            mostraAlertaExcluirItem(listaCompras[viewHolder.adapterPosition])
+        }
+
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    private fun mostraAlertaExcluirItem(compra: Compra) {
+        val alert = AlertDialog.Builder(this@ListaComprasActivity)
+        alert.setTitle("Confirmar ação")
+        alert.setMessage("Tem certeza que deseja limpar a lista?")
+        alert.setCancelable(false)
+        alert.setNegativeButton("Não") { d, i -> }
+        alert.setPositiveButton("Sim") { d, i -> excluirMovimentacao(compra) }
+        alert.create()
+        alert.show()
+        adapter.notifyDataSetChanged();
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    private fun excluirMovimentacao(compra: Compra) {
+        val idUsuario = Base64Custom.codificar(autenticacao.currentUser?.email.toString())
+        val databaseRef = database.child("lista").child(idUsuario).child(compra.idCompra.toString())
+        databaseRef.removeValue().addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                Toast.makeText(this, "Item removido", Toast.LENGTH_SHORT).show()
+                atualizarSaldo(compra)
+            } else {
+                Toast.makeText(this, "Erro ao excluir item", Toast.LENGTH_SHORT).show()
+                task.exception?.printStackTrace()
+            }
+        }
+        adapter.notifyDataSetChanged()
+    }
+
+    private fun atualizarSaldo(compra: Compra) {
+        val saldoAtualizado = saldoTotal - compra.total
+        val idUsuario = Base64Custom.codificar(autenticacao.currentUser?.email.toString())
+        val databaseRef = database.child("saldo").child(idUsuario)
+        databaseRef.setValue(saldoAtualizado)
+        compra.ajustaValorTotalLista(saldoAtualizado)
     }
 
     override fun onStart() {
@@ -65,7 +137,11 @@ class ListaComprasActivity : AppCompatActivity() {
         val databaseRef = database.child("saldo").child(idUsuario)
         saldoVEL = object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                saldoTotal = snapshot.value.toString().toDouble()
+                if (snapshot.value != null) {
+                    saldoTotal = snapshot.value.toString().toDouble()
+                } else {
+                    saldoTotal = 0.00
+                }
                 val saldoFormatado = String.format(Locale("pt", "BR"), "R$ %.2f", saldoTotal)
                 findViewById<TextView>(R.id.textoTotalCompra).text = saldoFormatado
             }
@@ -81,7 +157,7 @@ class ListaComprasActivity : AppCompatActivity() {
     @SuppressLint("NotifyDataSetChanged")
     fun limparLista(view: View) {
         val builder = AlertDialog.Builder(this)
-        builder.setTitle("Confirmar exclusão")
+        builder.setTitle("Confirmar ação")
         builder.setMessage("Tem certeza que deseja limpar a lista?")
         builder.setNegativeButton("Não") { d, i -> }
         builder.setPositiveButton("Sim") { dialog, wich ->
@@ -92,6 +168,7 @@ class ListaComprasActivity : AppCompatActivity() {
             saldoDatabaseRef.setValue(0.00)
             listaCompras.clear()
             saldoTotal = 0.00
+            Compra.idGeral = 0
             adapter.notifyDataSetChanged()
             carregarSaldoTotal()
         }
@@ -106,6 +183,33 @@ class ListaComprasActivity : AppCompatActivity() {
         recyclerLista.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager.VERTICAL))
         adapter = ListaComprasAdapter(listaCompras)
         recyclerLista.adapter = adapter
+
+        recyclerLista.addOnItemTouchListener(
+            RecyclerItemClickListener(
+                this,
+                recyclerLista,
+                object : RecyclerItemClickListener.OnItemClickListener {
+                    override fun onItemClick(view: View?, position: Int) {
+                        abrirActivityAlteraItem(listaCompras[position])
+                    }
+
+                    override fun onItemClick(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+
+                    }
+
+                    override fun onLongItemClick(view: View?, position: Int) {
+                        mostraAlertaExcluirItem(listaCompras[position])
+                    }
+
+                }
+            )
+        )
+    }
+
+    private fun abrirActivityAlteraItem(compra: Compra) {
+        val intent = Intent(this, AdicionarItemActivity::class.java)
+        intent.putExtra("compra", compra)
+        startActivity(intent)
     }
 
     @SuppressLint("NotifyDataSetChanged")

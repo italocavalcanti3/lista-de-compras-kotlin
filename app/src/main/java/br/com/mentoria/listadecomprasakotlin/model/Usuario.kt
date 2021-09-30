@@ -9,7 +9,7 @@ class Usuario {
     var email = ""
 
     fun salva() {
-        var database = FirebaseDatabase.getInstance().reference
+        val database = FirebaseDatabase.getInstance().reference
         database.child("usuarios").child(id).setValue(this)
     }
 
