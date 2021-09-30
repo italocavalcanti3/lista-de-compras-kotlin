@@ -56,7 +56,6 @@ class ListaComprasActivity : AppCompatActivity() {
         val itemTouchHelper = ItemTouchHelper(ItemTouchHelper())
         itemTouchHelper.attachToRecyclerView(binding.contentMain.recyclerLista)
 
-
     }
 
     inner class ItemTouchHelper : Callback() {

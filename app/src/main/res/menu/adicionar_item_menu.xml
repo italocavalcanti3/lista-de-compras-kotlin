@@ -2,11 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/salvar"
-        android:orderInCategory="100"
-        app:showAsAction="always"
-        android:title="@string/salvar"
+    <item
+        android:id="@+id/salvar"
+        android:checkable="true"
         android:icon="@drawable/ic_salvar"
-        android:iconTint="@color/white"/>
+        android:iconTint="@color/white"
+        android:orderInCategory="100"
+        android:title="@string/salvar"
+        app:showAsAction="always" />
 
 </menu>
