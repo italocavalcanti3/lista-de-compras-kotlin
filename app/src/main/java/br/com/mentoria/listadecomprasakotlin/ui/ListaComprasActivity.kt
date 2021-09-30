@@ -31,6 +31,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
+import java.io.Serializable
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -168,6 +169,7 @@ class ListaComprasActivity : AppCompatActivity() {
             saldoDatabaseRef.setValue(0.00)
             listaCompras.clear()
             saldoTotal = 0.00
+            Compra.valorTotalLista = 0.00
             Compra.idGeral = 0
             adapter.notifyDataSetChanged()
             carregarSaldoTotal()
@@ -208,7 +210,7 @@ class ListaComprasActivity : AppCompatActivity() {
 
     private fun abrirActivityAlteraItem(compra: Compra) {
         val intent = Intent(this, AdicionarItemActivity::class.java)
-        intent.putExtra("compra", compra)
+        intent.putExtra("compra", compra as Serializable)
         startActivity(intent)
     }
 

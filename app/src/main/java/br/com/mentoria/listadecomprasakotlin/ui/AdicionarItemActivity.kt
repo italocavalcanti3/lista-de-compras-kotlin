@@ -22,6 +22,7 @@ class AdicionarItemActivity : AppCompatActivity() {
     lateinit var textPreco: EditText
     lateinit var usuario: Usuario
     lateinit var compra: Compra
+    lateinit var compraRecuperada: Compra
     private var autenticacao: FirebaseAuth = Firebase.auth
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +34,13 @@ class AdicionarItemActivity : AppCompatActivity() {
         textDescricao = binding.textNome
         textQuantidade = binding.textQuantidade
         textPreco = binding.textValor
+
+        if (intent.hasExtra("compra")) {
+            compraRecuperada = intent.extras?.get("compra") as Compra
+            textDescricao.setText(compraRecuperada.descricao)
+            textQuantidade.setText(compraRecuperada.quantidade.toString())
+            textPreco.setText(compraRecuperada.preco.toString())
+        }
 
     }
 
@@ -52,6 +60,7 @@ class AdicionarItemActivity : AppCompatActivity() {
                     val quantidade: Int = textQuantidade.text.toString().toInt()
                     val descricao: String = textDescricao.text.toString()
                     val preco: Double = textPreco.text.toString().toDouble()
+
                     compra = Compra(quantidade, descricao, preco)
                     compra.salva(autenticacao.currentUser?.email.toString())
 
