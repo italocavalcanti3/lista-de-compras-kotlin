@@ -18,10 +18,14 @@ class Compra: Serializable {
         @get:Exclude
         var valorTotalLista: Double = 0.00
         @get:Exclude
-        var idGeral: Int = 0
+        var idGeral: Int = 1
     }
     fun ajustaValorTotalLista(valor: Double) {
         valorTotalLista = valor
+    }
+
+    fun getValorTotalLista(): Double {
+        return valorTotalLista
     }
     fun ajustaIdGeral(id: Int) {
         idGeral = 0

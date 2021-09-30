@@ -61,9 +61,26 @@ class AdicionarItemActivity : AppCompatActivity() {
                     val descricao: String = textDescricao.text.toString()
                     val preco: Double = textPreco.text.toString().toDouble()
 
-                    compra = Compra(quantidade, descricao, preco)
-                    compra.salva(autenticacao.currentUser?.email.toString())
+                    if (this::compraRecuperada.isInitialized) { // ATUALIZA
 
+                        val valorCompraAtual = preco * quantidade
+                        val valorCompraAnterior = compraRecuperada.total
+                        val valorLista = compraRecuperada.getValorTotalLista()
+                        val valorListaAjustado = valorLista - valorCompraAnterior + valorCompraAtual
+
+                        compraRecuperada.quantidade = quantidade
+                        compraRecuperada.descricao = descricao
+                        compraRecuperada.preco = preco
+                        compraRecuperada.total = preco * quantidade
+                        compraRecuperada.ajustaValorTotalLista(valorListaAjustado)
+                        compraRecuperada.salva(autenticacao.currentUser?.email.toString())
+
+                    } else { // SALVA
+
+                        compra = Compra(quantidade, descricao, preco)
+                        compra.salva(autenticacao.currentUser?.email.toString())
+
+                    }
                     finish()
                 } else {
                     Log.i("ADICIONAR_ITEM", "Erro ao salvar item")

@@ -58,6 +58,11 @@ class ListaComprasActivity : AppCompatActivity() {
 
     }
 
+    override fun onResume() {
+        super.onResume()
+        carregarSaldoTotal()
+    }
+
     inner class ItemTouchHelper : Callback() {
         override fun getMovementFlags(
             recyclerView: RecyclerView,
