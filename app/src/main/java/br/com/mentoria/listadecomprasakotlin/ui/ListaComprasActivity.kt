@@ -36,7 +36,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class ListaComprasActivity : AppCompatActivity() {
-
+    
     lateinit var listaVEL: ValueEventListener
     lateinit var saldoVEL: ValueEventListener
     lateinit var adapter: ListaComprasAdapter
@@ -155,8 +155,12 @@ class ListaComprasActivity : AppCompatActivity() {
                 TODO("Not yet implemented")
             }
         }
-        adapter.notifyDataSetChanged()
         databaseRef.addValueEventListener(saldoVEL)
+        adapter.notifyDataSetChanged()
+    }
+
+    private fun carregarSaldoTotal2() {
+        val idUsuario = Base64Custom.codificar(autenticacao.currentUser?.email.toString())
     }
 
     @SuppressLint("NotifyDataSetChanged")

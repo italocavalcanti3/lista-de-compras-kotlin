@@ -47,7 +47,8 @@ class Compra: Serializable {
         val idUsuario = Base64Custom.codificar(email.toString())
         val database = FirebaseDatabase.getInstance().reference
         database.child("lista").child(idUsuario).child(this.idCompra.toString()).setValue(this)
-        database.child("saldo").child(idUsuario).setValue(valorTotalLista)
+        database.child("lista").child(idUsuario).child("saldo").setValue(valorTotalLista)
+//        database.child("saldo").child(idUsuario).setValue(valorTotalLista)
     }
 
 }
