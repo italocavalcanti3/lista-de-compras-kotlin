@@ -1,12 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: com.heinrichreimersoftware:material-intro:2.0.0@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/1db1019e7f505f7bcc47d306eb76523e/transformed/jetified-material-intro-2.0.0/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/103deb424c0c4a46ea06392f7fff3118/transformed/jetified-material-intro-2.0.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/1db1019e7f505f7bcc47d306eb76523e/transformed/jetified-material-intro-2.0.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/1db1019e7f505f7bcc47d306eb76523e/transformed/jetified-material-intro-2.0.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/1db1019e7f505f7bcc47d306eb76523e/transformed/jetified-material-intro-2.0.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/103deb424c0c4a46ea06392f7fff3118/transformed/jetified-material-intro-2.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/103deb424c0c4a46ea06392f7fff3118/transformed/jetified-material-intro-2.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/103deb424c0c4a46ea06392f7fff3118/transformed/jetified-material-intro-2.0.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
